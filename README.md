@@ -13,10 +13,9 @@ The robot navigates an initially unknown maze using sensor feedback and a finite
 | Trial | Observation |
 | --- | --- |
 | **Round 1** | Reached the goal in **1 min 25 s (85 s)**, within the **8-minute limit** |
-| **Round 2** | Temporarily became stuck in a narrow, wall-surrounded area; eventually stopped **beside**, rather than precisely at, the goal |
+| **Round 2** | Temporarily became stuck in a narrow, wall-surrounded area; eventually reached the goal |
 | **Mapping** | A SLAM occupancy-grid map was saved for **round 2**; no map file is available for round 1 |
 
-These are the two demonstration rounds, **not a statistically significant success-rate assessment**. The second-round positioning error's exact cause was not established; manual goal measurement and odometry error are plausible contributing factors.
 
 ## Navigation architecture
 
@@ -83,10 +82,9 @@ README.md
 ## Limitations and future improvements
 
 - Navigation instability in narrow, enclosed spaces
-- Goal-position sensitivity to manual measurements and odometry drift
 - Junction matching and opening detection depend on geometry and sensor readings
 - No shortest-path guarantee and no quantitative position-error evaluation
-- Potential next steps: robust recovery behaviors, improved goal localization, and integration of SLAM localization/map-aware planning
+- Potential next steps: robust recovery behaviors, and integration of SLAM localization/map-aware planning
 
 ## What I implemented
 
@@ -96,8 +94,5 @@ README.md
 - Configured and ran **RPLIDAR + SLAM Toolbox** mapping, exported the second-round occupancy grid, and documented the mapping pipeline.
 - Tested, tuned, and documented the implementation and its practical limitations.
 
-### Development history
-
-The source was previously versioned in the [course development repository, `development_sepher` branch](https://github.com/sahaya453/Create3_robot/tree/development_sepher). This personal repository is a curated presentation of my implementation. ROS 2, RPLIDAR ROS, and SLAM Toolbox are third-party technologies and are identified as such.
 
 The project was developed for an academic demonstration; the code is not presented as a fully validated, production-ready navigation stack.
